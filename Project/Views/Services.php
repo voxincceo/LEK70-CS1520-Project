@@ -16,8 +16,9 @@
 		$dbHost = 'localhost:3306';
 		$dbUser = 'root';
 		$dbP = 'Vox7';
+		$db = 'VOX';
 
-		$dbConn = mysql_connect($dbHost, $dbUser, $dbP);	#establish connection
+		$dbConn = new mysqli($dbHost, $dbUser, $dbP, $db);	#establish connection
 		if(!$dbConn)
 		{
 			die('Could not connect to database: ' . mysql_error());
@@ -26,20 +27,17 @@
 		#Query for checking table for services
 		$checkTable = "SELECT * FROM Services;";
 
-		#select appropriate database
-		mysql_select_db('VOX');
-
 		#make the query
 		echo '<div class = "container-fluid">';
-		$ctQuery = mysql_query($checkTable, $dbConn);
-		if(mysql_num_rows($ctQuery) != 0)
+		$ctQuery = $dbConn->query($checkTable);
+		if($ctQuery->num_rows != 0)
 		{
 			echo '<div class="panel panel-default">';
-			while($row = mysql_fetch_assoc($ctQuery))
+			while($row = $ctQuery->fetch_assoc())
 			{
 				echo '<div class="panel-heading"><h4>'.  $row['Name'] . 
 						'</h4>
-						<form role="form" action="buy.php" method="POST">
+						<form role="form" action="Buy.php" method="POST">
 							<button type="submit" name=' . $row['Short'] . ' class="btn btn-default">More info</button>
 						</form>
 						</div>

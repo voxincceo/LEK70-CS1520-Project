@@ -51,7 +51,7 @@
 			<div class="container-fluid">
 				<div class="panel panel-default">
 					<div class="panel-heading"><h4>Deals <span class="glyphicon glyphicon-tags"></span></h4></div>
-					<div class="panel-body">We don't have any curent specials/coupons currently, but our service prices are the lowest on the internet guarenteed!</div>
+					<div class="panel-body">Get a free speed-up/clean-up service for your computer when you purchase the Virus/Trojan/Malware fix!</div>
 				</div>
 			</div>
 		</div>
@@ -62,7 +62,7 @@
 					<small>If you want to know an estimated price before you send your device in, just submit this form!</small>
 				</div>
 				<div class="panel-body">
-					<form role="form" action="quote.php" method="POST">
+					<form role="form" action="Quote.php" method="POST">
 						<div class="form-group">
 					    	<label for="name">Name:</label>
 					    	<input type="text" class="form-control" id="name" name="name">

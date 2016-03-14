@@ -9,7 +9,16 @@
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<div class="row">
+		<img style="float:left" height=15% width=15% src="../Images/VOX.png">
+		<div class="container">
+			<h1>VOX Electronic Repair</h1>
+			<p>If you want a toaster in your TV, we can do it.</p> 
+		</div>
+	</div>
+
 	<?php
+
 		if($_POST['name'] != "" & $_POST['email'] != "" & $_POST['make'] != "" & $_POST['model'] != "" & $_POST['description'] != "")
 		{
 			#Will add auto email to my email address based on form information
