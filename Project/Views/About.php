@@ -8,7 +8,7 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<!-- About me page, overall container with panels that house different questions and answers about me-->
 <div class = "container-fluid">
 	<h1>About Us</h1>
 	<div class="panel panel-default">

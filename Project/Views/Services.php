@@ -35,6 +35,7 @@
 			echo '<div class="panel panel-default">';
 			while($row = $ctQuery->fetch_assoc())
 			{
+				#show list of services from db
 				echo '<div class="panel-heading"><h4>'.  $row['Name'] . 
 						'</h4>
 						<form role="form" action="Buy.php" method="POST">

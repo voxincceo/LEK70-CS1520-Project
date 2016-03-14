@@ -9,7 +9,7 @@
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="row">
+	<div class="row">	<!-- Header of the site-->
 		<img style="float:left" height=15% width=15% src="../Images/VOX.png">
 		<div class="container">
 			<h1>VOX Electronic Repair</h1>
@@ -17,11 +17,11 @@
 		</div>
 	</div>
 
-	<div class="container-fluid">
+	<div class="container-fluid">	<!-- Php that checks which button is pressed and then displays relevant information about the service -->
 		<?php
 			$product = "";
 
-			if(isset($_POST['iPhone']))
+			if(isset($_POST['iPhone']))		#check which button isset
 			{
 				echo '<h3>iPhone/Android/Smartphone Repair</h3>';
 				
@@ -72,7 +72,7 @@
 
 			if($ctQuery->num_rows != 0)
 			{
-				while($row = $ctQuery->fetch_assoc())
+				while($row = $ctQuery->fetch_assoc())	#make list
 				{
 					echo '<li class="list-group-item">
 					    	<span class="label label-default label-pill pull-xs-right">' . $row['Price'] . '</span>
@@ -83,11 +83,12 @@
 			else
 			{
 				#no serivces
-				echo '<h3>No services in database</h3>';
+				echo '<h3>No information about service in database</h3>';
 			}
 
 			echo '</ul>';
 
+			#display information on steps after purchase
 			echo '<h4>Steps after purchase</h4>
 						<ul class="list-group">
 						  <li class="list-group-item">
@@ -119,6 +120,7 @@
 						';
 
 		?>
+		<!-- options to continue PayPal is a TODO-->
 		<img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right:7px;"> -or-
 		<a href="Main.php">Cancel and go back home <span class="glyphicon glyphicon-home"></span></a>
 	 </div>

@@ -8,7 +8,7 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<!-- Simple contact page with information and glyphs to look better -->
 <div class = "container-fluid">
 	<h1>Contact Us</h1>
 	<p>If you have any questions, please do not hesitate to ask us.</p>

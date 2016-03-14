@@ -9,8 +9,8 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-<div class="row">
+<!-- Entrance to the site -->
+<div class="row"> <!-- site header -->
 	<img style="float:left" height=15% width=15% src="../Images/VOX.png">
 	<div class="container">
   		<h1>VOX Electronic Repair</h1>
@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<div id="main">
+<div id="main"> <!-- navigation bar -->
 	<ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
 	  <li class="active"><a href="#Home" data-toggle="tab">Home</a></li>
 	  <li><a href="#Services" data-toggle="tab">Services</a></li>
@@ -26,6 +26,7 @@
 	  <li><a href="#Contact" data-toggle="tab">Contact Us</a></li>
 	</ul>
 
+  <!-- Area left to display other pages that the user has selected via include() -->
 	<div id="pages" class="tab-content" style = "background:linear-gradient(to bottom, #ffffff , #ffcc00); height:100%;">
 		<div class="tab-pane active" id="Home">
             <?php

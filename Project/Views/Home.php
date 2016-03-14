@@ -8,14 +8,14 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<!-- Home page of the site -->
 <div class = "container-fluid">
 	<h1>VOX Electronic Repair</h1>
 	<div class="row container-fluid">
 		<div class="col-xs-8">
 			<div class="container-fluid">
 				<div class="panel panel-default">
-					<div class="panel-heading"><h4>Common Services <span class="glyphicon glyphicon-wrench"></h4></div>
+					<div class="panel-heading"><h4>Common Services <span class="glyphicon glyphicon-wrench"></h4></div> <!-- list of typicall services we provide -->
 					<div class="panel-body">
 						<div class="list-group">
 						  <div class="list-group-item">
@@ -42,13 +42,13 @@
 					</div>
 				</div>
 			</div>
-			<div class="container-fluid">
+			<div class="container-fluid"> <!-- Display information about hours-->
 				<div class="panel panel-default">
 					<div class="panel-heading"><h4>Hours <span class="glyphicon glyphicon-time"></span></h4></div>
 					<div class="panel-body">We don't have set working hours, but we work 24/7 to get your devices fixed and in your hands as fast as possible!</div>
 				</div>
 			</div>
-			<div class="container-fluid">
+			<div class="container-fluid"> <!-- Display current deals -->
 				<div class="panel panel-default">
 					<div class="panel-heading"><h4>Deals <span class="glyphicon glyphicon-tags"></span></h4></div>
 					<div class="panel-body">Get a free speed-up/clean-up service for your computer when you purchase the Virus/Trojan/Malware fix!</div>
@@ -56,7 +56,7 @@
 			</div>
 		</div>
 		<div class="col-xs-4">
-			<div class="panel panel-default">
+			<div class="panel panel-default"> <!-- form that is used to email me about a direct quote for a fix -->
 				<div class="panel-heading">
 					<h3>Get a free and quick estimate!</h3>
 					<small>If you want to know an estimated price before you send your device in, just submit this form!</small>

@@ -9,7 +9,7 @@
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="row">
+	<div class="row"> <!-- site header -->
 		<img style="float:left" height=15% width=15% src="../Images/VOX.png">
 		<div class="container">
 			<h1>VOX Electronic Repair</h1>
@@ -18,10 +18,18 @@
 	</div>
 
 	<?php
-
+		#check if form was set properly
 		if($_POST['name'] != "" & $_POST['email'] != "" & $_POST['make'] != "" & $_POST['model'] != "" & $_POST['description'] != "")
 		{
-			#Will add auto email to my email address based on form information
+			#generate email
+			mail("voxincceo@gmail.com", "VOX Quote", 
+				"Name: " . $_POST['name'] . 
+				"\nEmail: " . $_POST['email'] .
+				"\nMake: " . $_POST['make'] .
+				"\nModel: " . $_POST['model'] .
+				"\nDescription: " . $_POST['description']);
+
+			#display success
 			echo '<div class="container-fluid">
 					<h3>Thank you for filling out the form! <span class="glyphicon glyphicon-ok"></span></h3>
 					<small>We will respond to your request in less than 24 hours.</small>
@@ -30,6 +38,7 @@
 		}
 		else
 		{
+			#display failure
 			echo '<div class="container-fluid">
 					<h3>The form was not completed correctly! <span class="glyphicon glyphicon-remove"></span></h3>
 					<small>You must fill out all fields of the form.</small>
