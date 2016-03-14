@@ -11,13 +11,11 @@
 <body>
 
 <div class="row">
-	<div class ="col-xs-2">
-		<img width=75% height=75% src="../Images/VOX.png">
-	</div>
-	<div class="container-fluid">
+	<img style="float:left" height=15% width=15% src="../Images/VOX.png">
+	<div class="container">
   		<h1>VOX Electronic Repair</h1>
-  		<span>If you want a toaster in your TV, we can do it.</span> 
-  	</div>
+  		<p>If you want a toaster in your TV, we can do it.</p> 
+  </div>
 </div>
 
 <div id="main">
@@ -28,7 +26,7 @@
 	  <li><a href="#Contact" data-toggle="tab">Contact Us</a></li>
 	</ul>
 
-	<div id="pages" class="tab-content">
+	<div id="pages" class="tab-content" style = "background:linear-gradient(to bottom, #ffffff , #ffcc00); height:100%;">
 		<div class="tab-pane active" id="Home">
             <?php
             	include("Home.php");
