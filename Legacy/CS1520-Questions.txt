@@ -1,0 +1,25 @@
+Luke Kljucaric
+CS1520 – Project Question/Answers
+
+What did you change/enhance from part 1?
+
+	Some minor UI/UX tweaks were added such as a better looking navbar and fade transitions on the pages. There are other small tweaks site-wide as well but not very noticeable.
+	The major changes came from the inclusion of JavaScript functionality. First, the form that is submitted is checked/validated on the client-side to reduce the load on the server. It checks to make sure that the form is filled our properly before sending the information to the server. It displays text on the form where the user needs to make corrections. Additionally, the result of this form submission is done asynchronously, so a new page is no longer loaded. The success message is shown in place of the form. The back button now shows a new form, also without a page refresh. 
+	Second, the “More Info” button on the services tab no longer brings you to a new page. The detailed information for the service is shown asynchronously now as well, not requiring the page refresh. The back button now reshows the list of services without making calls to the database again. It populates the view from the database originally, and that view is saved for performance (even though the database isn’t large enough yet to really see this). The detailed information view of a service wont be saved; however, it will be populated from the database each request. 
+	Also, a unified header was created. Although, because of the JavaScript integration, there is only one main page that is loaded so the header is constant either way (The Buy.php and Quote.php used the header but now don’t because they’re now shown inline). 
+
+If there was a third part to the class project, what would you like to implement?
+
+	A majority of the site functionality is done. The main thing I would need to do is integrate the PayPal API and get that working with my PayPal button. This is really the only thing that separates a user from actually benefiting from my site.
+	A side note, the form submission actually sends an email with the information provided in the form to my email so I can get in touch with a user. An email is sent from Pitt’s email daemon when I’m on their network; however, when I am using my home internet, the email doesn’t send. I’m assuming this is because Pitt’s network is designed to handle those requests whereas I’d have to set up some kind of similar mail daemon on my computer to handle the mail request. 
+ 
+What did you learn between part 1 and part 2?
+
+	JavaScript makes a website look and feel completely different. It allows the programmer to provide much better / cleaner interactions for the user. The form validation and ability to show pages without a refresh makes my website look much more professional and user friendly than it did before. Ultimately, JavaScript allows a website to be way more dynamic.
+
+
+
+What did you like about this project? How could it have been better?
+
+	I liked the fact that we were given free reign on what direction to take this project. It wasn’t the typical here’s what you have to do and get it done. I was able to design and build something meaningful that I will most likely use in the future.
+	I don’t have any complaints about the project or the process involved, so I’m not sure as to where it could have been better. Although, with more knowledge on other web technologies, I’m sure the project’s capabilities can be improved but that’s at the mercy of the limited time over the semester.
