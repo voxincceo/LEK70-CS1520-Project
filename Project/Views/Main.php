@@ -15,12 +15,14 @@
 		?>
 
 		<div id="main"> <!-- navigation bar -->
-			<ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-				<li class="active"><a href="#Home" data-toggle="tab">Home</a></li>
-				<li><a href="#Services" data-toggle="tab">Services</a></li>
-				<li><a href="#About" data-toggle="tab">About Us</a></li>
-				<li><a href="#Contact" data-toggle="tab">Contact Us</a></li>
-			</ul>
+			<nav class="navbar navbar-inverse">
+				<ul id="tabs" class="nav navbar-nav" data-tabs="tabs">
+					<li class="active"><a href="#Home" data-toggle="pill">Home</a></li>
+					<li><a href="#Services" data-toggle="pill">Services</a></li>
+					<li><a href="#About" data-toggle="pill">About Us</a></li>
+					<li><a href="#Contact" data-toggle="pill">Contact Us</a></li>
+				</ul>
+			</nav>
 
 			<!-- Area left to display other pages that the user has selected via include() -->
 			<div id="pages" class="tab-content" style="background:linear-gradient(to bottom, #ffffff , #ffcc00); height:100%;">
