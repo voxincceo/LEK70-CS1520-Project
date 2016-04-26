@@ -9,43 +9,29 @@
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<?php
- 		include("header.html");
-	?>
-
 	<div class="container-fluid">	<!-- Php that checks which button is pressed and then displays relevant information about the service -->
 		<?php
-			$product = "";
+			$product = $_POST['service'];
 
-			if(isset($_POST['iPhone']))		#check which button isset
+			if($_POST['service'] === "iPhone")		#check which button isset
 			{
 				echo '<h3>iPhone/Android/Smartphone Repair</h3>';
-				
-				$product = "iPhone"; 
 			}
-			elseif (isset($_POST['Computer']))
+			elseif ($_POST['service'] === "Computer")
 			{
 				echo '<h3>Computer/Laptop Repair</h3>';
-
-				$product = "Computer";
 			}
-			elseif (isset($_POST['iPad']))
+			elseif ($_POST['service'] === "iPad")
 			{
 				echo '<h3>iPad/iPod/Tablet Repair</h3>';
-
-				$product = 'iPad';
 			}
-			elseif (isset($_POST['Game']))
+			elseif ($_POST['service'] === "Game")
 			{
 				echo '<h3>Game Console Repair</h3>';
-
-				$product = 'Game';
 			}
-			elseif (isset($_POST['Custom']))
+			elseif ($_POST['service'] === "Custom")
 			{
 				echo '<h3>Custom Repair, Upgrade, or Modification</h3>';
-
-				$product = 'Custom';
 			}
 
 			$dbHost = 'localhost:3306';
@@ -117,9 +103,10 @@
 
 		?>
 		<!-- options to continue PayPal is a TODO-->
-		<img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right:7px;"> -or-
-		<a href="Main.php">Cancel and go back home <span class="glyphicon glyphicon-home"></span></a>
+		<button class="btn btn-default"><img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right:7px;"></button> -or-
+		<button onclick="showServices()" class="btn btn-default">Cancel and go back <span class="glyphicon glyphicon-home"></span></button>
 	 </div>
+	</br>
 
 	<script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
 

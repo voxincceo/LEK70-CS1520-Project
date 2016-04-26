@@ -13,6 +13,7 @@
   		var error;
   		var submit = true;
 
+  		//erase current errors
   		if(visibleErrors)
   		{
   			document.getElementById("nameLabel").innerHTML = "Name:";
@@ -22,6 +23,7 @@
   			document.getElementById("descriptionLabel").innerHTML = "Description:";
   		}
 
+  		//name field check
   		if(document.getElementById("name").value === "")
   		{
   			error = " Please enter a name!";
@@ -31,6 +33,7 @@
   			visibleErrors = true;
   		}
 
+  		//email field check
   		if(document.getElementById("email").value === "")
   		{
   			error = " Please enter an email!";
@@ -40,6 +43,7 @@
   			visibleErrors = true;
   		}
 
+  		//make field check
   		if(document.getElementById("make").value === "")
   		{
   			error = " Please enter a device manufacturer!";
@@ -49,6 +53,7 @@
   			visibleErrors = true;
   		}
 
+  		//model field check
   		if(document.getElementById("model").value === "")
   		{
   			error = " Please enter a device model!";
@@ -58,6 +63,7 @@
   			visibleErrors = true;
   		}
 
+  		//description field check
   		if(document.getElementById("description").value === "")
   		{
   			error = " Please enter a description!";
@@ -67,6 +73,7 @@
   			visibleErrors = true;
   		}
 
+  		//call get quote if no form errors
   		if(submit)
   		{
   			getQuote();
@@ -79,18 +86,24 @@
 
   		xhttp = new XMLHttpRequest();
         xhttp.open("POST", "Quote.php", true);
+
+        //generate parameters from form
         params = "name=" + document.getElementById("name").value + "&email=" + document.getElementById("email").value + "&make=" + document.getElementById("make").value + "&model=" + document.getElementById("model").value + "&description=" + document.getElementById("description").value;
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
         xhttp.send(params);
 
         xhttp.onreadystatechange = function() {
             if (xhttp.readyState == 4 && xhttp.status == 200) {
+            	//display the result of form submission
             	document.getElementById("formBody").innerHTML = xhttp.responseText;
             }
         };
 	}
 
 	function loadForm(){
+		/* Show a new blank form
+		 * Sorry for the +, wrapping the entire thing in just '' game me a JS parse error so I had to use + to show the html semantics in a human readable way in case of changes here 
+		 */
 		document.getElementById("formBody").innerHTML = '<div>' +
 															'<div class="form-group">' +
 														    	'<label for="name" id="nameLabel">Name:</label>' +
