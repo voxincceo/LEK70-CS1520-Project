@@ -10,13 +10,9 @@
 </head>
 <body>
 <!-- Entrance to the site -->
-<div class="row"> <!-- site header -->
-	<img style="float:left" height=15% width=15% src="../Images/VOX.png">
-	<div class="container">
-  		<h1>VOX Electronic Repair</h1>
-  		<p>If you want a toaster in your TV, we can do it.</p> 
-  </div>
-</div>
+<?php
+  include("header.html");
+?>
 
 <div id="main"> <!-- navigation bar -->
 	<ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
@@ -27,7 +23,7 @@
 	</ul>
 
   <!-- Area left to display other pages that the user has selected via include() -->
-	<div id="pages" class="tab-content" style = "background:linear-gradient(to bottom, #ffffff , #ffcc00); height:100%;">
+	<div id="pages" class="tab-content" style="background:linear-gradient(to bottom, #ffffff , #ffcc00); height:100%;">
 		<div class="tab-pane active" id="Home">
             <?php
             	include("Home.php");

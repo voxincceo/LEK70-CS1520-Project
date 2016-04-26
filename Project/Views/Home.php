@@ -6,10 +6,120 @@
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  	var visibleErrors = false;
+
+  	function checkForm(){
+  		var error;
+  		var submit = true;
+
+  		if(visibleErrors)
+  		{
+  			document.getElementById("nameLabel").innerHTML = "Name:";
+  			document.getElementById("emailLabel").innerHTML = "Email Address:";
+  			document.getElementById("makeLabel").innerHTML = "Device Make:";
+  			document.getElementById("modelLabel").innerHTML = "Device Model:";
+  			document.getElementById("descriptionLabel").innerHTML = "Description:";
+  		}
+
+  		if(document.getElementById("name").value === "")
+  		{
+  			error = " Please enter a name!";
+  			var nameError = error.fontcolor("red");
+  			document.getElementById("nameLabel").innerHTML += nameError;
+  			submit = false;
+  			visibleErrors = true;
+  		}
+
+  		if(document.getElementById("email").value === "")
+  		{
+  			error = " Please enter an email!";
+  			var emailError = error.fontcolor("red");
+  			document.getElementById("emailLabel").innerHTML += emailError;
+  			submit = false;
+  			visibleErrors = true;
+  		}
+
+  		if(document.getElementById("make").value === "")
+  		{
+  			error = " Please enter a device manufacturer!";
+  			var makeError = error.fontcolor("red");
+  			document.getElementById("makeLabel").innerHTML += makeError;
+  			submit = false;
+  			visibleErrors = true;
+  		}
+
+  		if(document.getElementById("model").value === "")
+  		{
+  			error = " Please enter a device model!";
+  			var modelError = error.fontcolor("red");
+  			document.getElementById("modelLabel").innerHTML += modelError;
+  			submit = false;
+  			visibleErrors = true;
+  		}
+
+  		if(document.getElementById("description").value === "")
+  		{
+  			error = " Please enter a description!";
+  			var descriptionError = error.fontcolor("red");
+  			document.getElementById("descriptionLabel").innerHTML += descriptionError;
+  			submit = false;
+  			visibleErrors = true;
+  		}
+
+  		if(submit)
+  		{
+  			getQuote();
+  		}
+
+  	}
+
+  	function getQuote(){
+  		var xhttp, params;
+
+  		xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "Quote.php", true);
+        params = "name=" + document.getElementById("name").value + "&email=" + document.getElementById("email").value + "&make=" + document.getElementById("make").value + "&model=" + document.getElementById("model").value + "&description=" + document.getElementById("description").value;
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+        xhttp.send(params);
+
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+            	document.getElementById("formBody").innerHTML = xhttp.responseText;
+            }
+        };
+	}
+
+	function loadForm(){
+		document.getElementById("formBody").innerHTML = '<div>' +
+															'<div class="form-group">' +
+														    	'<label for="name" id="nameLabel">Name:</label>' +
+														    	'<input type="text" class="form-control" id="name" name="name">' +
+														  	'</div>' +
+															'<div class="form-group">' +
+														    	'<label for="email" id="emailLabel">Email Address:</label>' +
+														    	'<input type="email" class="form-control" id="email" name="email">' +
+														  	'</div>' +
+														  	'<div class="form-group">' +
+														    	'<label for="make" id="makeLabel">Device Make:</label>' +
+														    	'<input type="text" class="form-control" id="make" name="make">' +
+														  	'</div>' +
+														  	'<div class="form-group">' +
+														    	'<label for="model" id="modelLabel">Device Model:</label>' +
+														    	'<input type="text" class="form-control" id="model" name="model">' +
+														  	'</div>' +
+														  	'<div class="form-group">' +
+														    	'<label for="description" id="descriptionLabel">Description:</label>' +
+														    	'<textarea class="form-control" rows = "5" id="description" name="description"></textarea>' +
+														  	'</div>' +
+														  	'<button onclick="checkForm()" class="btn btn-default">Submit</button>' +
+														'</div>';
+	}
+  </script>
 </head>
 <body>
 <!-- Home page of the site -->
-<div class = "container-fluid">
+<div class="container-fluid">
 	<h1>VOX Electronic Repair</h1>
 	<div class="row container-fluid">
 		<div class="col-xs-8">
@@ -61,36 +171,14 @@
 					<h3>Get a free and quick estimate!</h3>
 					<small>If you want to know an estimated price before you send your device in, just submit this form!</small>
 				</div>
-				<div class="panel-body">
-					<form role="form" action="Quote.php" method="POST">
-						<div class="form-group">
-					    	<label for="name">Name:</label>
-					    	<input type="text" class="form-control" id="name" name="name">
-					  	</div>
-						<div class="form-group">
-					    	<label for="email">Email address:</label>
-					    	<input type="email" class="form-control" id="email" name="email">
-					  	</div>
-					  	<div class="form-group">
-					    	<label for="make">Device Make:</label>
-					    	<input type="text" class="form-control" id="make" name="make">
-					  	</div>
-					  	<div class="form-group">
-					    	<label for="model">Device Model:</label>
-					    	<input type="text" class="form-control" id="model" name="model">
-					  	</div>
-					  	<div class="form-group">
-					    	<label for="description">Description:</label>
-					    	<textarea class="form-control" rows = "5" id="description" name="description"></textarea>
-					  	</div>
-					  	<button type="submit" class="btn btn-default">Submit</button>
-					</form>
+				<div class="panel-body" id="formBody">
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
+<script type="text/javascript"> loadForm();</script>
 <script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
 
 </body>
